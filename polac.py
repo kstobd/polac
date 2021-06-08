@@ -1,58 +1,147 @@
-#27 с тремя парами
-def nechet(a, b):
-    return (a - b) % 2 != 0
+for m in range(2, 100, 2):
+    for n in range(3, 100, 2):
+        num = (2 ** m) * (7 ** n)
+        if num >= 100000000 and num <= 300000000:
+            print(num, m + n, m, n)
 
-group1, group2, group3 = 0, 0, 0 
-arrg1, arrg1 = [], [] 
-maxi, mini = 0, 100000
-dif = 100000
-with open("14.txt") as f:
-    n = int(f.readline())
-    for line in f:
-        a, b, c = [int(elem) for elem in line.split()]
-        maxi = max(a, b, c)
-        mini = min(a, b, c) 
-        mid = a + b + c - mini - maxi
-        group3 += maxi
-        dif = maxi - mid if nechet(maxi, mid) and ((maxi - mid) < dif) else dif
-        dif = maxi - mini if nechet(maxi, mini) and ((maxi - mini) < dif) else dif
-        dif = mid - mini if nechet(mid, mini) and ((mid - mini) < dif) else dif
-        group1 += mid
-        group2 += mini
-    if group1 % 2 + group2 % 2 == 1:
-        print(group1, group2, group3)
-    else:
-        print(group1, group2, group3 - dif)
 
+
+
+#dif1, dif2, dif3, dif4 = [], [], [], []
+#sum, mini = 0, 1000000000
+#with open ("13b.txt") as f:
+#    n = f.readline()
+#    for line in f:
+#        a, b  = [int(elem) for elem in line.split()]
+#        sum += min(a, b)
+#        if max(a, b) - min(a, b) == 1:
+#            dif1.append([min(a,b), max(a,b)])
+#        if max(a, b) - min(a, b) == 2:
+#            dif2.append([min(a,b), max(a,b)])
+#        if max(a, b) - min(a, b) == 3:
+#            dif3.append([min(a,b), max(a,b)])
+#        if max(a, b) - min(a, b) == 4:
+#            dif4.append([min(a,b), max(a,b)])
+#    if sum % 5 == 4:
+#        for i in dif1:
+#            if sum - i[0] + i[1] < mini:
+#                mini = sum - i[0] + i[1]
+#    if sum % 5 == 3:
+#        for i in dif2:
+#            if sum - i[0] + i[1] < mini:
+#                mini = sum - i[0] + i[1]
+#    if sum % 5 == 2:
+#        for i in dif3:
+#            if sum - i[0] + i[1] < mini:
+#                mini = sum - i[0] + i[1]
+#    if sum % 5 == 1:
+#        for i in dif4:
+#            if sum - i[0] + i[1] < mini:
+#                mini = sum - i[0] + i[1]
+#    print(sum)
+#    print(mini)
+#    #print(dif1, dif2, dif3, dif4, sep = '\n')
         
 
 
+##27
+#min, s = 1000000000, []
+#with open("27B.txt") as f:
+#    n = int(f.readline())
+#    for line in f:
+#        s.append(int(line))
+#    s.sort()
+#    for a in range(50):
+#        for b in range(50):
+#            for c in range(50):
+#                if s[a] + s[b] + s[c] < min and (s[a] + s[b] + s[c]) % 3 == 0 and s[a] != s[b] and s[a] != s[c] and s[b] != s[c]:
+#                    min = s[a] + s[b] + s[c]
+#print(min)
 
+
+#def delitel(a):
+#    flag = False
+#    for i in range(2, a // 2):
+#        if a % i == 0:
+#            flag = True
+#            #print(i)
+#            if a % 13 != 0:
+#                return False
+#                break
+#    return flag
+
+
+##print(delitel(208))
+#count = 0
+#i = 350300
+#while count <= 6:
+#    i += 1
+#    if delitel(i):
+#        count += 1
+#        print(i)
+
+
+##Не рабочая 27
+#ChetMax, ChetMin = 100000, 1000000
+#sumMax, sumMin = 0, 0
+#with open ("27-B__5nim.txt") as f:
+#    n = int(f.readline())
+#    for line in f:
+#        a, b = [int(elem) for elem in line.split()]
+#        if b % 2 != 0:
+#            sumMax += max(a, b)
+#            sumMin += min(a, b)
+#            if max(a, b) % 2 != 0:
+#                if ChetMax > a + b:
+#                    ChetMax = a + b
+#                    ChetMaxValue = max(a, b)
+#            if min(a, b) % 2 != 0:
+#                if ChetMin > a + b:
+#                    ChetMin = a + b
+#                    ChetMinValue = min(a, b)
+#    res = sumMax + sumMin
+#    while sumMax % 2 != 0 and sumMin % 2 == 0:
+#        if sumMax % 2 != 0:
+#            sumMax
+#        else:
+#            res -= ChetMax
+#        if sumMin % 2 == 0:
+#            continue
+#        else:
+#            res -= ChetMin
+#print(res)
+
+
+
+
+
+##27 с тремя парами
+#def nechet(a, b):
+#    return (a - b) % 2 != 0
+
+#group1, group2, group3 = 0, 0, 0 
+#arrg1, arrg1 = [], [] 
+#maxi, mini = 0, 100000
+#dif = 100000
+#with open("14.txt") as f:
+#    n = int(f.readline())
+#    for line in f:
+#        a, b, c = [int(elem) for elem in line.split()]
+#        maxi = max(a, b, c)
+#        mini = min(a, b, c) 
+#        mid = a + b + c - mini - maxi
+#        group3 += maxi
+#        dif = maxi - mid if nechet(maxi, mid) and ((maxi - mid) < dif) else dif
+#        dif = maxi - mini if nechet(maxi, mini) and ((maxi - mini) < dif) else dif
+#        dif = mid - mini if nechet(mid, mini) and ((mid - mini) < dif) else dif
+#        group1 += mid
+#        group2 += mini
+#    if group1 % 2 + group2 % 2 == 1:
+#        print(group1, group2, group3)
+#    else:
+#        print(group1, group2, group3 - dif)
 
         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
