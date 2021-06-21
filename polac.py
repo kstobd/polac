@@ -1,8 +1,66 @@
-for m in range(2, 100, 2):
-    for n in range(3, 100, 2):
-        num = (2 ** m) * (7 ** n)
-        if num >= 100000000 and num <= 300000000:
-            print(num, m + n, m, n)
+def Prime(a):
+    for i in range(2, int(a ** 0.5) + 1):
+        if a % i == 0:
+            return False 
+    return True
+
+count = 0 
+rez = []
+maxdel = []
+maxrez = 0
+for i in range(631632, 684935):
+    for d in range(2, int(i ** 0.5) + 1):
+        if i % d == 0:
+            if Prime(d):
+                if Prime(int(i // d)):
+                    if int(i // d) - d > maxrez:
+                        maxrez = int(i // d) - d
+                        maxdel = [d, int(i // d)]
+                        rez.append(i)
+print(len(rez), rez[0], maxrez, maxdel)
+
+
+
+
+#with open ("26-j9.txt") as f:
+#    a, b = [int(elem) for elem in f.readline()]
+#    value = []
+#    for line in f:
+#        value.append(int(line))
+#    value.sort()
+#    summ = 0
+#    i = 0
+#    while summ <= a:
+#        summ += value[i]
+#        i += 1
+#    print(summ, i)
+
+
+
+
+#with open ("27-8b.txt") as f:
+#    value = []
+#    n = int(f.readline())
+#    for line in f:
+#        value.append(int(line))
+#    minindex = value.index(min(value))
+#    mini = value.pop(minindex)
+#    minindex2 = value.index(min(value))
+#    mini2 = value.pop(minindex2)
+#    if minindex2 - minindex <= 5:
+#        minindex2 = value.index(min(value))
+#        mini2 = value.pop(minindex2)
+#    print(minindex, mini, minindex2, mini2, mini ** 2 + mini2 ** 2)
+
+
+
+
+
+#for m in range(2, 100, 2):
+#    for n in range(3, 100, 2):
+#        num = (2 ** m) * (7 ** n)
+#        if num >= 100000000 and num <= 300000000:
+#            print(num, m + n, m, n)
 
 
 
